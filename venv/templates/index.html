@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/mini.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/full.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js?ver=1.9.1'></script>
+		<script type='text/javascript' src='http://www.washington.edu/wp-includes/js/underscore.min.js?ver=1.6.0'></script>
+		<script type='text/javascript' src='http://www.washington.edu/wp-includes/js/backbone.min.js?ver=1.1.2'></script>
+		<script type='text/javascript' src='http://www.washington.edu/wp-content/themes/uw-2014/js/site.dev.js'></script>
+
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js" type="text/javascript"></script>
+            <script src="js/respond.js" type="text/javascript"></script>
+            <link rel='stylesheet' href='css/ie.css' type='text/css' media='all' />
+        <![endif]-->
+        
+    </head>
+    <body>
+        <div id="uw-container">
+            <div id="uw-container-inner">
+                <header class="uw-thinstrip">
+                    <!-- Fix this -->
+                    <div class="container">
+                        <a class="uw-patch">iSIFT</a>
+                    </div>
+                </header>
+                <nav id="dawgdrops">
+                    <div class="dawgdrops-inner container">
+                        <ul class="dawgdrops-nav" id="menu-brand-menu">
+                            <li class="dawgdrops-item">
+                                <!-- Make this current tab -->
+                                <a href="{{ url_for('about')}}"
+                                id="193" title="About">About</a>
+                            </li>
+                            <li class="dawgdrops-item">
+                                <a href="{{ url_for('search')}}"
+                                id="486" title="Search">Tool</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="uw-body">
+                    <div class="container">
+                        
+                        <h2 class="large"> What is SIFT? </h2>
+                        <p>SIFT is a four-step strategy used to fact-check and cross-reference information. 
+                            It can be applied to quickly ascertain the accuracy of information presented in social media and news articles. 
+                        </p>
+                        <p>The steps are outlined below:</p>
+                    </div>
+                    <div class="container streamline">
+                        <div class="row">
+                        <div class="col">
+                            <h2 class="large"> S </h2>
+                        </div>
+                        <div class="col">
+                            <h3>STOP</h3> and think before sharing a post or article 
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                            <h2 class="large"> I </h2>
+                            </div>
+                            <div class="col">
+                                <h3>INVESTIGATE </h3>the source. Check their reputation and authority.
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                            <h2 class="large"> F </h2>
+                            </div>
+                            <div class="col">
+                                <h3>FIND </h3> better coverage. Can you find similar claims elsewhere?
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                            <h2 class="large"> T </h2>
+                            </div>
+                            <div class="col">
+                                <h3>TRACE </h3>claims, quotes, and media to its original context.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h2 class="large"> Resources</h2>
+                        <p>
+                            Interested in learning more? Do you want to continue building your media literacy skills? Check out some of the resources below!
+                        </p>
+                        <a class="uw-btn btn-sm" href="https://www.cip.uw.edu/"> Center for an Informed Public</a> <BR>
+                        <a class="uw-btn btn-sm" href=""> Some Resource</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/mini.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/full.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js?ver=1.9.1'></script>
+		<script type='text/javascript' src='http://www.washington.edu/wp-includes/js/underscore.min.js?ver=1.6.0'></script>
+		<script type='text/javascript' src='http://www.washington.edu/wp-includes/js/backbone.min.js?ver=1.1.2'></script>
+		<script type='text/javascript' src='http://www.washington.edu/wp-content/themes/uw-2014/js/site.dev.js'></script>
+
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js" type="text/javascript"></script>
+            <script src="js/respond.js" type="text/javascript"></script>
+            <link rel='stylesheet' href='css/ie.css' type='text/css' media='all' />
+        <![endif]-->
+        
+    </head>
+    <body>
+        <div id="uw-container">
+            <div id="uw-container-inner">
+                <header class="uw-thinstrip">
+                    <!-- Fix this -->
+                    <div class="container">
+                        <a class="uw-patch">iSIFT</a>
+                    </div>
+                </header>
+                <nav id="dawgdrops">
+                    <div class="dawgdrops-inner container">
+                        <ul class="dawgdrops-nav" id="menu-brand-menu">
+                            <li class="dawgdrops-item">
+                                <!-- Make this current tab -->
+                                <a href="{{ url_for('about')}}"
+                                id="193" title="About">About</a>
+                            </li>
+                            <li class="dawgdrops-item">
+                                <a href="{{ url_for('search')}}"
+                                id="486" title="Tool">Tool</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="uw-body">
+                    <div class="container">
+                        
+                        <p>SIFT is a four-step strategy used to fact-check and cross-reference information. 
+                            It can be applied to quickly ascertain the accuracy of information presented in social media and news articles. 
+                        </p>
+                        <h2 class="large"> Enter article link </h2>
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <ul class="flashes">
+                                {% for message in messages %}
+                                <li>{{ message }}</li>
+                                {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endwith %}
+
+                        {% from "_searchHelper.html" import render_field %}
+                        <form method="post">
+                            <dl>
+                                {{ render_field(form.search) }}
+                            </dl>
+                            <p> <input class="uw-btn btn-lg" type="submit" value="Search"></p>
+                         </form>
+                         <p>
+                             <br>
+                            <h2>Some examples:  </h2>
+                            <p> Right Click -> Copy Link Address -> Paste in Search Bar </p>
+                             <ul>
+                                 <li> <a href="https://www.npr.org/sections/health-shots/2021/04/14/985863133/a-year-in-heres-what-we-know-about-vitamin-d-for-preventing-covid">
+                                    A Year In, Here's What We Know About Vitamin D For Preventing COVID</a> </li>
+                                <li> <a href="https://www.npr.org/2021/04/15/987182241/the-most-popular-j-j-vaccine-story-on-facebook-a-conspiracy-theorist-posted-it">
+                                    The Most Popular J&J Vaccine Story On Facebook? A Conspiracy Theorist Posted It</a></li>
+                             </ul>
+                         </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
