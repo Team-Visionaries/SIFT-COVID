@@ -72,6 +72,17 @@
   height: 24px;
   background: url(../assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
 }
+
+.uw-thinstrip p {
+  font-family: "Encode Sans Compressed", sans-serif;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  padding: 0px 10px 10px 30px;
+  letter-spacing: .01em;
+}
+
 .uw-thinstrip ul.uw-thin-links {
   margin: 0;
   position: relative;

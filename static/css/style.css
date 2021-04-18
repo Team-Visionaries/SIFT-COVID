@@ -5932,14 +5932,14 @@ a.uw-custom-link:hover {
 	text-indent: -9999px;
 	width: 163px;
 	height: 90px;
-	background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 transparent;
+	/* background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 transparent; */
 	position: absolute;
 	top: -22px;
 	left: 0;
 	z-index: 1
 }
 
-.uw-thinstrip .uw-patch:focus,
+/* .uw-thinstrip .uw-patch:focus,
 .uw-thinstrip .uw-patch:hover {
 	background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent
 }
@@ -5958,7 +5958,7 @@ a.uw-custom-link:hover {
 	width: 330px;
 	height: 24px;
 	background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent
-}
+} */
 
 .uw-thinstrip div.align-right {
 	float: right
