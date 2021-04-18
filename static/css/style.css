@@ -6585,9 +6585,9 @@ a.uw-custom-link:hover {
 	position: inherit !important
 }
 
-.dawgdrops-item:hover button {
+/* .dawgdrops-item:hover button {
 	display: none
-}
+} */
 
 .dawgdrops-item button {
 	content: "";

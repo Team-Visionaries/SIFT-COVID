@@ -10,7 +10,6 @@ app = Flask(__name__)
 @app.route('/tool')
 def tool(search):
     url = search.data['search']
-    # url = "https://www.npr.org/sections/health-shots/2021/04/14/985863133/a-year-in-heres-what-we-know-about-vitamin-d-for-preventing-covid"
 
     if url == '' or not url.startswith('http'):
             flash('Please enter a URL!')
