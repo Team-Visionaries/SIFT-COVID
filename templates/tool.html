@@ -51,25 +51,31 @@
                 </nav>
                 <div class="uw-body">
                     <div class="container">
-                        <h1 id="article_name" class="large"> <a href="{{data.url}}">{{data.title}}</a></h1>
-                        <h2 class="large"> Summary </h2>
-                        <p>{{data.summary}}</p>
+                        <h1 id="article_name" class="large"> {{data.title}} </h1>
                         <h2 class="large"> Key Information </h2>
                         <div class="container streamline">
                             <div class="row">
-                            <div class="col">
-                                <h3> Author </h3>
+                                <div class="col">
+                                    <h3> Link </h3>
+                                </div>
+                                <div class="col">
+                                <a href={{data.url}}> Click here</a>
+                                </div>
                             </div>
-                            <div class="col">
-                               TBD
-                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h3> Author </h3>
+                                </div>
+                                <div class="col">
+                                {{data.authors}}
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col">
                                 <h3> Publisher </h3>
                                 </div>
                                 <div class="col">
-                                    TBD
+                                   <a href={{data.source_url}}>{{data.source_name}}</a> 
                                 </div>
                             </div>
                             <div class="row">
@@ -77,15 +83,7 @@
                                 <h3> Date Published </h3>
                                 </div>
                                 <div class="col">
-                                    TBD
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                <h3> Type of Source </h3>
-                                </div>
-                                <div class="col">
-                                    TBD
+                                    {{data.date}}
                                 </div>
                             </div>
                             <div class="row">
@@ -108,22 +106,36 @@
                                 </div>
                             </div>
                         </div>
+                        <h2 class="large"> Summary </h2>
+                        <p><b>Summary: </b> {{data.summary}}</p>
+                        <p><b>Keywords:</b> {{data.keywords}}</p>
                         <h2 class="large"> Sifty Tips </h2>
+                        <br> 
                         <div class="container">
                             <h3>Date Published</h3>
-                            <p>{{data.date}}</p>
+                            <p>This article was published {{data.date_diff}} days ago. Information in news sources may be outdated. 
+                                News is everchanging and facts can change in a matter of hours or months. 
+                                Look at the "Next Steps" section below to find more recent information about this topic.</p>
+                            <br>
                             <h3>Type of Source</h3>
-                            <p>Some information</p>
+                            <p>This article was obtained from <a href={{data.source_url}}>{{data.source_name}}.</a> </p>
+                            <p>{{data.source_descr}}</p>
+                            <p>Source is important! We want you to obtain your information from a reliable and valuable source. Reflect on the following:
+                                <ul>
+                                    <li>Is this a source you trust? </li>
+                                    <li>Has this source provide unbiased information for this topic?</li>
+                                    <li>Is the information presented factual or opinion based?</li>
+                                    <li>Are the facts presented here from a reliable source?</li>
+                                </ul> </p>
                         </div>
                         <h2 class="large"> Next Steps </h2>
                         <div class="container">
                             <p>Here are some search links to get you started! Click on the link to any search engine you like!</p>
-                                <a class="uw-btn" href="#">Google</a> <br>
-                                <a class="uw-btn" href="#">DuckDuckGo</a><br>
-                                <a class="uw-btn" href="#">Yahoo</a><br>
+                                <a class="uw-btn" href={{data.google_query}}>Google</a> <br>
+                                <a class="uw-btn" href={{data.duck_query}}>DuckDuckGo</a><br>
+                                <a class="uw-btn" href={{data.yahoo_query}}>Yahoo</a><br>
                         </div>
                     </div>
-
                 </div>
             </div>
 

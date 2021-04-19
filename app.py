@@ -4,7 +4,8 @@ from newspaper import Article
 from search import SearchBar
 from bs4 import BeautifulSoup # https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 from flask import Flask, flash, render_template, request, redirect
-
+from urllib.parse import urlparse
+from datetime import datetime
 app = Flask(__name__)
 
 @app.route('/tool')
@@ -19,13 +20,25 @@ def tool(search):
         article.download()
         article.parse()
         article.nlp()
-
+        source_url = 'https://' + urlparse(url).netloc
+        source = newspaper.build(source_url, memoize_articles=False)
+        publish_date = article.publish_date.strftime("%d %B, %Y")
+        diff = str((datetime.now() - article.publish_date).days)
+        keyword_query = '+'.join(map(str, article.keywords))
         results = {
             'url': url,
             'title': article.title,
-            'date:': article.publish_date,
-            'keywords': article.keywords,
-            'summary': article.summary
+            'date': publish_date,
+            'source_url': source_url,
+            'source_name': source.brand.upper(),
+            'source_descr': source.description,
+            'keywords': ', '.join(map(str, article.keywords)),
+            'summary': article.summary,
+            'authors': ', '.join(map(str, article.authors)),
+            'date_diff': diff,
+            'google_query': 'https://www.google.com/search?q=' + keyword_query,
+            'duck_query': 'https://www.duckduckgo.com?q=' + keyword_query,
+            'yahoo_query': 'https://www.search.yahoo.com/search?p=' + keyword_query
         }
         return render_template('tool.html', data=results)
 @app.route('/search', methods=['GET', 'POST']) 
