@@ -59,7 +59,7 @@
                                     <h3> Link </h3>
                                 </div>
                                 <div class="col">
-                                <a href={{data.url}}> Click here</a>
+                                <a href={{data.url}} target="_blank"> Click here</a>
                                 </div>
                             </div>
                             <div class="row">
@@ -75,7 +75,7 @@
                                 <h3> Publisher </h3>
                                 </div>
                                 <div class="col">
-                                   <a href={{data.source_url}}>{{data.source_name}}</a> 
+                                   <a href={{data.source_url}} target="_blank">{{data.source_name}}</a> 
                                 </div>
                             </div>
                             <div class="row">
@@ -91,18 +91,7 @@
                                 <h3> Total Citations </h3>
                                 </div>
                                 <div class="col">
-                                    TBD
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                <h3> Citations </h3>
-                                </div>
-                                <div class="col">
-                                    <ul>
-                                        <li>Link 1</li>
-                                        <li>Link 2</li>
-                                    </ul>
+                                    {{data.num_citations}}
                                 </div>
                             </div>
                         </div>
@@ -118,7 +107,7 @@
                                 Look at the "Next Steps" section below to find more recent information about this topic.</p>
                             <br>
                             <h3>Type of Source</h3>
-                            <p>This article was obtained from <a href={{data.source_url}}>{{data.source_name}}.</a> </p>
+                            <p>This article was obtained from <a href={{data.source_url}} target="_blank">{{data.source_name}}.</a> </p>
                             <p>{{data.source_descr}}</p>
                             <p>Source is important! We want you to obtain your information from a reliable and valuable source. Reflect on the following:
                                 <ul>
@@ -126,14 +115,27 @@
                                     <li>Has this source provide unbiased information for this topic?</li>
                                     <li>Is the information presented factual or opinion based?</li>
                                     <li>Are the facts presented here from a reliable source?</li>
-                                </ul> </p>
+                                </ul>
+                            </p>
+                            <br>
+                            <h3> Sources mentioned </h3>
+                            <p> Here are the {{data.num_citations}} links that were referenced throughout the article. More links 
+                                may mean that this source has done their homework and gets their facts from multiple different sources.
+                                But, you must analyze these sources for credibility as well!
+                            </p>
+                            <ul>
+                                {% for each in data.citations %}
+                                    <li><a href={{each.href}}>{{each.text}}</a> </li>
+                                {% endfor %}
+                            </ul>
                         </div>
                         <h2 class="large"> Next Steps </h2>
                         <div class="container">
-                            <p>Here are some search links to get you started! Click on the link to any search engine you like!</p>
-                                <a class="uw-btn" href={{data.google_query}}>Google</a> <br>
-                                <a class="uw-btn" href={{data.duck_query}}>DuckDuckGo</a><br>
-                                <a class="uw-btn" href={{data.yahoo_query}}>Yahoo</a><br>
+                            <p>An import part of fact checking is exploring different sources for the same information.
+                                Here are some search links to get you started! Click on the link to any search engine you like!</p>
+                                <a class="uw-btn" href={{data.google_query}} target="_blank">Google</a> <br>
+                                <a class="uw-btn" href={{data.duck_query}} target="_blank">DuckDuckGo</a><br>
+                                <a class="uw-btn" href={{data.yahoo_query}} target="_blank">Yahoo</a><br>
                         </div>
                     </div>
                 </div>

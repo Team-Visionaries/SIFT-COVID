@@ -25,6 +25,10 @@ def tool(search):
         publish_date = article.publish_date.strftime("%d %B, %Y")
         diff = str((datetime.now() - article.publish_date).days)
         keyword_query = '+'.join(map(str, article.keywords))
+
+        # Citations
+        citations = getCitations(article)
+
         results = {
             'url': url,
             'title': article.title,
@@ -38,7 +42,9 @@ def tool(search):
             'date_diff': diff,
             'google_query': 'https://www.google.com/search?q=' + keyword_query,
             'duck_query': 'https://www.duckduckgo.com?q=' + keyword_query,
-            'yahoo_query': 'https://www.search.yahoo.com/search?p=' + keyword_query
+            'yahoo_query': 'https://www.search.yahoo.com/search?p=' + keyword_query,
+            'num_citations': str(len(citations)),
+            'citations': citations
         }
         return render_template('tool.html', data=results)
 @app.route('/search', methods=['GET', 'POST']) 
@@ -53,5 +59,15 @@ def search():
 def about():
     return render_template('index.html')
 
+def getCitations(article):
+    htmlCode = article.html
+    soup = BeautifulSoup(htmlCode, "html.parser")
+    a_elems = soup.body.find_all("a")
+    links = []
+    for elem in a_elems:
+        if(len(elem.attrs.keys()) <= 1 & ('href' in elem.attrs)):
+            if elem.attrs['href'].startswith('http'):
+                links.append({'href': elem.attrs['href'], 'text': elem.text})
+    return links
 if __name__ == '__main__':
     app.run()
