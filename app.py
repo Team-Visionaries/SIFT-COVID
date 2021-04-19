@@ -9,9 +9,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 @app.route('/tool')
-def tool(search):
-    url = search.data['search']
-
+def tool(url):
     if url == '' or not url.startswith('http'):
             flash('Please enter a URL!')
             return redirect('/search')
@@ -51,8 +49,10 @@ def tool(search):
 def search():
     app.secret_key = 'super secret key'
     search = SearchBar(request.form)
+    if request.args.get('url') != None:
+        return tool(request.args.get('url'))
     if request.method == 'POST':
-        return tool(search)
+        return tool(search.data['search'])
     return render_template('search.html', form=search)
 
 @app.route('/')

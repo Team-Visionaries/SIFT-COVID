@@ -27,6 +27,6 @@ SIFT is a four-step strategy used to fact-check and cross-reference information.
 
 We will do so with the help of two tools created by Team Visionaries
 - **SIFTY chatbot**: Chats with users about the article they see on Facebook and provides resources on how to fact-check it
-- **[Information Extraction Web Tool](https://team-visionaries.github.io/SIFT-COVID/)**: Summarizes key info and provides tips that will help expedite the fact checking process
+- **[Information Extraction Web Tool](https://isift.herokuapp.com/)**: Summarizes key info and provides tips that will help expedite the fact checking process
 
 **NOTE: iSIFT is NOT an info hub; our goal is to summarize info and promote media literacy**
