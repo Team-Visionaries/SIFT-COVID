@@ -14,15 +14,30 @@ def tool(url):
             flash('Please enter a URL!')
             return redirect('/search')
     else:
-        article = Article(url)
-        article.download()
-        article.parse()
-        article.nlp()
+        errorMsg = "Could not find. Please open the article to search for this value"
+        try:
+            article = Article(url)
+            article.download()
+            article.parse()
+            article.nlp()
+        except Exception:
+            flash('There was an error parsing the article. Please try another article!')
+            return redirect('/search')
+        
         source_url = 'https://' + urlparse(url).netloc
-        source = newspaper.build(source_url, memoize_articles=False)
-        publish_date = article.publish_date.strftime("%d %B, %Y")
-        diff = str((datetime.now() - article.publish_date).days)
         keyword_query = '+'.join(map(str, article.keywords))
+        try:
+            source = newspaper.build(source_url, memoize_articles=False)
+            source_brand = source.brand.upper()
+        except Exception:
+            source_brand = errorMsg
+
+        try:
+            publish_date = article.publish_date.strftime("%d %B, %Y")
+            diff = str((datetime.now() - article.publish_date).days)
+        except Exception:
+            publish_date = errorMsg
+            diff = "unknown"
 
         # Citations
         citations = getCitations(article)
@@ -32,7 +47,7 @@ def tool(url):
             'title': article.title,
             'date': publish_date,
             'source_url': source_url,
-            'source_name': source.brand.upper(),
+            'source_name': source_brand,
             'source_descr': source.description,
             'keywords': ', '.join(map(str, article.keywords)),
             'summary': article.summary,
