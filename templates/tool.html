@@ -76,7 +76,6 @@
                                 </div>
                                 <div class="col">
                                    <a href={{data.source_url}} target="_blank">{{data.source_name}}</a> 
-                                   <a href={{data.wikipedia_query}} target="_blank">(Find on Wikipedia)</a>
                                 </div>
                             </div>
                             <div class="row">
@@ -98,7 +97,7 @@
                         </div>
                         <h2 class="large"> Next Steps </h2>
                         <div class="container">
-                            <p>The most important part of fact checking as well as the heart of the<a href="https://isift.herokuapp.com/">SIFT method</a>
+                            <p>The most important part of fact checking as well as the heart of the <a href="https://isift.herokuapp.com/" target="_blank">SIFT method</a>
                                 lies exploring different sources! This includes investigating the source and finding different sources in the domain you want to learn about.
                                 Here are some search links to get you started. Click on the link to any search engine you like!</p>
                                 <div class="row">
@@ -151,7 +150,10 @@
                             <br>
                             <h3> Sources mentioned </h3>
                             {% if data.num_citations == "0" %}
-                                <p> We couldn't find any citations. We suggest you scan the article to look for sources we missed.</p>
+                                <p> We couldn't find any citations. We suggest you scan the article to look for sources we missed.
+                                    This will help you investigate, find and trace information as outlined in the 
+                                    <a href="https://isift.herokuapp.com/" target="_blank">SIFT method</a>
+                                </p>
                             {% else %}
                                 <p> Here are the {{data.num_citations}} links that were referenced throughout the article. More links 
                                     may mean that this source has done their homework and gets their facts from multiple different sources.
