@@ -76,6 +76,7 @@
                                 </div>
                                 <div class="col">
                                    <a href={{data.source_url}} target="_blank">{{data.source_name}}</a> 
+                                   <a href={{data.wikipedia_query}} target="_blank">(Find on Wikipedia)</a>
                                 </div>
                             </div>
                             <div class="row">
@@ -95,6 +96,32 @@
                                 </div>
                             </div>
                         </div>
+                        <h2 class="large"> Next Steps </h2>
+                        <div class="container">
+                            <p>The most important part of fact checking as well as the heart of the<a href="https://isift.herokuapp.com/">SIFT method</a>
+                                lies exploring different sources! This includes investigating the source and finding different sources in the domain you want to learn about.
+                                Here are some search links to get you started. Click on the link to any search engine you like!</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Investigate the Source</h3>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Explore the topic</h3>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="uw-btn" href={{data.google_source}} target="_blank">Google</a> <br>
+                                    <a class="uw-btn" href={{data.duck_source}} target="_blank">DuckDuckGo</a><br>
+                                    <a class="uw-btn" href={{data.yahoo_source}} target="_blank">Yahoo</a><br>
+                                </div>
+                                <div class="col">
+                                    <a class="uw-btn" href={{data.google_query}} target="_blank">Google</a> <br>
+                                    <a class="uw-btn" href={{data.duck_query}} target="_blank">DuckDuckGo</a><br>
+                                    <a class="uw-btn" href={{data.yahoo_query}} target="_blank">Yahoo</a><br>
+                                </div>
+                            </div>
+                        </div>
                         <h2 class="large"> Summary </h2>
                         <p><b>Summary: </b> {{data.summary}}</p>
                         <p><b>Keywords:</b> {{data.keywords}}</p>
@@ -107,7 +134,11 @@
                                 Look at the "Next Steps" section below to find more recent information about this topic.</p>
                             <br>
                             <h3>Type of Source</h3>
-                            <p>This article was obtained from <a href={{data.source_url}} target="_blank">{{data.source_name}}.</a> </p>
+                            <p>
+                                This article was obtained from <a href={{data.source_url}} target="_blank">{{data.source_name}}.</a>
+                                To determine if this source is credible, navigate to <a href="{{data.wikipedia_query}}"> Wikipedia </a>. This 
+                                will help you get the facts about this organization.
+                            </p>
                             <p>{{data.source_descr}}</p>
                             <p>Source is important! We want you to obtain your information from a reliable and valuable source. Reflect on the following:
                                 <ul>
@@ -119,23 +150,19 @@
                             </p>
                             <br>
                             <h3> Sources mentioned </h3>
-                            <p> Here are the {{data.num_citations}} links that were referenced throughout the article. More links 
-                                may mean that this source has done their homework and gets their facts from multiple different sources.
-                                But, you must analyze these sources for credibility as well!
-                            </p>
-                            <ul>
-                                {% for each in data.citations %}
-                                    <li><a href={{each.href}}>{{each.text}}</a> </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <h2 class="large"> Next Steps </h2>
-                        <div class="container">
-                            <p>An import part of fact checking is exploring different sources for the same information.
-                                Here are some search links to get you started! Click on the link to any search engine you like!</p>
-                                <a class="uw-btn" href={{data.google_query}} target="_blank">Google</a> <br>
-                                <a class="uw-btn" href={{data.duck_query}} target="_blank">DuckDuckGo</a><br>
-                                <a class="uw-btn" href={{data.yahoo_query}} target="_blank">Yahoo</a><br>
+                            {% if data.num_citations == "0" %}
+                                <p> We couldn't find any citations. We suggest you scan the article to look for sources we missed.</p>
+                            {% else %}
+                                <p> Here are the {{data.num_citations}} links that were referenced throughout the article. More links 
+                                    may mean that this source has done their homework and gets their facts from multiple different sources.
+                                    But, you must analyze these sources for credibility as well!
+                                </p>
+                                <ul>
+                                    {% for each in data.citations %}
+                                        <li><a href={{each.href}}>{{each.text}}</a> </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif%}
                         </div>
                     </div>
                 </div>

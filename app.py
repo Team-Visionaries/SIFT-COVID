@@ -41,6 +41,11 @@ def tool(url):
 
         # Citations
         citations = getCitations(article)
+        if type(citations) == str:
+            citations_len = str(0)
+            citations = []
+        else:
+            citations_len = str(len(citations))
 
         results = {
             'url': url,
@@ -53,10 +58,13 @@ def tool(url):
             'summary': article.summary,
             'authors': ', '.join(map(str, article.authors)),
             'date_diff': diff,
-            'google_query': 'https://www.google.com/search?q=' + keyword_query,
-            'duck_query': 'https://www.duckduckgo.com?q=' + keyword_query,
-            'yahoo_query': 'https://www.search.yahoo.com/search?p=' + keyword_query,
-            'num_citations': str(len(citations)),
+            'google_query': googleLink(keyword_query),
+            'duck_query': duckLink(keyword_query),
+            'yahoo_query': yahooLink(keyword_query),
+            'google_source': googleLink(source_brand + '+wikipedia'),
+            'yahoo_source': yahooLink(source_brand + '+wikipedia'),
+            'duck_source': duckLink(source_brand + '+wikipedia'),
+            'num_citations': citations_len,
             'citations': citations
         }
         return render_template('tool.html', data=results)
@@ -75,14 +83,27 @@ def about():
     return render_template('index.html')
 
 def getCitations(article):
-    htmlCode = article.html
-    soup = BeautifulSoup(htmlCode, "html.parser")
-    a_elems = soup.body.find_all("a")
-    links = []
-    for elem in a_elems:
-        if(len(elem.attrs.keys()) <= 1 & ('href' in elem.attrs)):
-            if elem.attrs['href'].startswith('http'):
-                links.append({'href': elem.attrs['href'], 'text': elem.text})
-    return links
+    try:
+        htmlCode = article.html
+        soup = BeautifulSoup(htmlCode, "html.parser")
+        a_elems = soup.body.find_all("a")
+        links = []
+        for elem in a_elems:
+            if(len(elem.attrs.keys()) <= 1 & ('href' in elem.attrs)):
+                if elem.attrs['href'].startswith('http'):
+                    links.append({'href': elem.attrs['href'], 'text': elem.text})
+        return links
+    except Exception:
+        return "Could not find citations"
+
+def googleLink(query):
+    return 'https://www.google.com/search?q=' + query
+
+def duckLink(query):
+    return 'https://www.duckduckgo.com?q=' + query
+
+def yahooLink(query):
+    return 'https://www.search.yahoo.com/search?p=' + query
+    
 if __name__ == '__main__':
     app.run()
