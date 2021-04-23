@@ -16,6 +16,7 @@ def tool(url):
     else:
         errorMsg = "Could not find. Please open the article to search for this value"
         try:
+            # Initiate article parsing
             article = Article(url)
             article.download()
             article.parse()
@@ -25,13 +26,22 @@ def tool(url):
             return redirect('/search')
         
         source_url = 'https://' + urlparse(url).netloc
-        keyword_query = '+'.join(map(str, article.keywords))
+
+        # Keywords are used to generate related search links
+        # If keywords aren't available then the article title is used
+        if len(article.keywords) != 0:
+            search_query = '+'.join(map(str, article.keywords))
+        else:
+            search_query = article.title.replace(' ', '+')
+
+        # Extracting the source from the URL
         try:
             source = newspaper.build(source_url, memoize_articles=False)
             source_brand = source.brand.upper()
         except Exception:
             source_brand = errorMsg
 
+        # Extracting date the article was published
         try:
             publish_date = article.publish_date.strftime("%d %B, %Y")
             diff = str((datetime.now() - article.publish_date).days)
@@ -39,7 +49,7 @@ def tool(url):
             publish_date = errorMsg
             diff = "unknown"
 
-        # Citations
+        # Extracting citations citations
         citations = getCitations(article)
         if type(citations) == str:
             citations_len = str(0)
@@ -58,9 +68,9 @@ def tool(url):
             'summary': article.summary,
             'authors': ', '.join(map(str, article.authors)),
             'date_diff': diff,
-            'google_query': googleLink(keyword_query),
-            'duck_query': duckLink(keyword_query),
-            'yahoo_query': yahooLink(keyword_query),
+            'google_query': googleLink(search_query),
+            'duck_query': duckLink(search_query),
+            'yahoo_query': yahooLink(search_query),
             'google_source': googleLink(source_brand + '+wikipedia'),
             'yahoo_source': yahooLink(source_brand + '+wikipedia'),
             'duck_source': duckLink(source_brand + '+wikipedia'),
