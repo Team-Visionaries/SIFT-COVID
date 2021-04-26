@@ -14,8 +14,10 @@ GitHub Theme URI: https://github.com/uweb/uw-2014
 html {
 	font-family: sans-serif;
 	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%
+	-webkit-text-size-adjust: 100%;
+	height: 100%
 }
+
 
 body {
 	margin: 0
@@ -295,6 +297,11 @@ img {
 	vertical-align: middle
 }
 
+@media screen and (max-width: 600px) {
+	.col{
+	  width: 100%;
+	}
+  }
 .img-responsive {
 	width: 100% \9;
 	display: block;
@@ -323,6 +330,74 @@ img {
 
 .img-circle {
 	border-radius: 50%
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+  }
+
+.img-center-home {
+	background: url(../assets/img/siftexplain.png) no-repeat;
+	height: 500px; /* You must set a specified height */
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: auto; /* Resize the background image to cover the entire container */
+}
+
+.img-center-tool {
+	background: url(../assets/img/siftytool.png) no-repeat;
+	height: 500px; /* You must set a specified height */
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: auto; /* Resize the background image to cover the entire container */
+}
+
+.img-right-key {
+	background: url(../assets/img/siftysummary.png) no-repeat;
+	height: 300px; /* You must set a specified height */
+	background-position: right; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: 40%; /* Resize the background image to cover the entire container */
+}
+
+.img-center-next {
+	background: url(../assets/img/siftynext.png) no-repeat;
+	height: 300px; /* You must set a specified height */
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: 30%; /* Resize the background image to cover the entire container */
+}
+@media (max-width:768px) {
+	.img-center-home {
+		background: url(../assets/img/siftexplain-sm.png) no-repeat;
+		background-position: center; /* Center the image */
+		background-repeat: no-repeat; /* Do not repeat the image */
+		background-size: 90%; /* Resize the background image to cover the entire container */
+	}
+	.img-center-tool {
+		background: url(../assets/img/siftytool-sm.png) no-repeat;
+		background-position: center; /* Center the image */
+		background-repeat: no-repeat; /* Do not repeat the image */
+		background-size: 90%; /* Resize the background image to cover the entire container */
+	}
+	.img-right-key {
+		background: url(../assets/img/siftysummary-sm.png) no-repeat;
+		height: 250px; /* You must set a specified height */
+		background-position: right; /* Center the image */
+		background-repeat: no-repeat; /* Do not repeat the image */
+		background-size: 70%; /* Resize the background image to cover the entire container */
+	}
+	
+	.img-center-next {
+		background: url(../assets/img/siftynext-sm.png) no-repeat;
+		background-position: center; /* Center the image */
+		background-repeat: no-repeat; /* Do not repeat the image */
+		background-size: 90%; /* Resize the background image to cover the entire container */
+	}
+	
 }
 
 hr {
@@ -3880,7 +3955,8 @@ address {
 	height: 100%;
 	margin-left: 0;
 	background-color: white;
-	overflow-x: hidden
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 #uw-container #quicklinks {
@@ -5932,14 +6008,26 @@ a.uw-custom-link:hover {
 	text-indent: -9999px;
 	width: 163px;
 	height: 90px;
-	/* background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 transparent; */
+	background: url(assets/svg/uw-sprite.svg) no-repeat 0 0 transparent;
 	position: absolute;
 	top: -22px;
 	left: 0;
 	z-index: 1
 }
 
-/* .uw-thinstrip .uw-patch:focus,
+.uw-thinstrip .sift-patch {
+	display: block;
+	text-indent: -9999px;
+	width: 163px;
+	height: 110px;
+	background: url(../assets/svg/isift.png) no-repeat 0 0 transparent;
+	position: absolute;
+	top: -22px;
+	left: 0;
+	z-index: 1;
+  }
+
+.uw-thinstrip .uw-patch:focus,
 .uw-thinstrip .uw-patch:hover {
 	background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent
 }
@@ -5958,7 +6046,7 @@ a.uw-custom-link:hover {
 	width: 330px;
 	height: 24px;
 	background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent
-} */
+}
 
 .uw-thinstrip div.align-right {
 	float: right

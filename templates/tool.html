@@ -51,51 +51,58 @@
                 </nav>
                 <div class="uw-body">
                     <div class="container">
+                        <div class="img-center-tool"></div>
                         <h1 id="article_name" class="large"> {{data.title}} </h1>
                         <h2 class="large"> Key Information </h2>
-                        <div class="container streamline">
+                        <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <h3> Link </h3>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h3> Link </h3>
+                                        </div>
+                                        <div class="col">
+                                        <a href={{data.url}} target="_blank"> Click here</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h3> Author </h3>
+                                        </div>
+                                        <div class="col">
+                                        {{data.authors}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                        <h3> Publisher </h3>
+                                        </div>
+                                        <div class="col">
+                                        <a href={{data.source_url}} target="_blank">{{data.source_name}}</a> 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                        <h3> Date Published </h3>
+                                        </div>
+                                        <div class="col">
+                                            {{data.date}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                        <h3> Total Citations </h3>
+                                        </div>
+                                        <div class="col">
+                                            {{data.num_citations}}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col">
-                                <a href={{data.url}} target="_blank"> Click here</a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <h3> Author </h3>
-                                </div>
-                                <div class="col">
-                                {{data.authors}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                <h3> Publisher </h3>
-                                </div>
-                                <div class="col">
-                                   <a href={{data.source_url}} target="_blank">{{data.source_name}}</a> 
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                <h3> Date Published </h3>
-                                </div>
-                                <div class="col">
-                                    {{data.date}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                <h3> Total Citations </h3>
-                                </div>
-                                <div class="col">
-                                    {{data.num_citations}}
-                                </div>
+                                <div class="col img-right-key"></div>
                             </div>
                         </div>
                         <h2 class="large"> Next Steps </h2>
+                        <div class="img-center-next"></div>
                         <div class="container">
                             <p>The most important part of fact checking as well as the heart of the <a href="https://isift.herokuapp.com/" target="_blank">SIFT method</a>
                                 lies exploring different sources! This includes investigating the source and finding different sources in the domain you want to learn about.
