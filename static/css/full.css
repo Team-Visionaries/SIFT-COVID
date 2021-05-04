@@ -368,6 +368,13 @@
     background-size: 670px;
     background-position: 0 -331px;
   }
+  .uw-thinstrip .uw-patch {
+    width: 73px;
+    height: 45px;
+    top: 0;
+    left: 0;
+    background-size: 470px;
+  }
 }
 .assistive-text {
   position: absolute;
@@ -392,7 +399,6 @@
   margin-left: 0;
   background-color: white;
   overflow-x: hidden;
-  height: 1500px;
 }
 #uw-container #quicklinks {
   position: absolute;

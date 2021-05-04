@@ -32,31 +32,32 @@
         <div id="uw-container">
             <div id="uw-container-inner">
                 <header class="uw-thinstrip">
-                    <p>iSIFT</p>
-                </header>
-                <nav id="dawgdrops">
-                    <div class="dawgdrops-inner container">
-                        <ul class="dawgdrops-nav" id="menu-brand-menu">
-                            <li class="dawgdrops-item">
-                                
-                                <a href="{{ url_for('about')}}"
-                                title="About">About</a>
-                            </li>
-                            <li class="dawgdrops-item">
-                                <a href="{{ url_for('search')}}"
-                                class="selected" title="Tool">Tool</a>
-                            </li>
-                        </ul>
+                    <div class='align-right'>
+                        <nav class="uw-thin-strip-nav">
+                            <ul class="uw-thin-links">
+                                <li class="dawgdrops-item">
+                                    <a href="{{ url_for('about')}}" title="About">About</a>
+                                </li>
+                                <li class="dawgdrops-item">
+                                    <a class="selected" href="{{ url_for('search')}}" title="Search">Tool</a>
+                                </li>
+                            </ul>
+                         </nav>
+                        <nav aria-label="search and quick links" id="search-quicklinks" role="navigation">
                     </div>
-                </nav>
+                    <div class="container">
+                        <a class="uw-patch" href="http://uw.edu" tabindex="-1" title=
+                        "University of Washington Home">Home</a> 
+                    </div>
+                </header>
                 <div class="uw-body">
                     <div class="container">
                         <div class="img-center-tool"></div>
                         <h1 id="article_name" class="large"> {{data.title}} </h1>
                         <h2 class="large"> Key Information </h2>
                         <div class="container">
-                            <div class="row">
-                                <div class="col">
+                            <!-- <div class="row">
+                                <div class="col"> -->
                                     <div class="row">
                                         <div class="col">
                                             <h3> Link </h3>
@@ -97,10 +98,10 @@
                                             {{data.num_citations}}
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col img-right-key"></div>
-                            </div>
+                                <!-- </div>
+                            </div> -->
                         </div>
+                        <div class="img-center-key"></div>
                         <h2 class="large"> Next Steps </h2>
                         <div class="img-center-next"></div>
                         <div class="container">
@@ -176,7 +177,12 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="uw-footer" role="contentinfo">
+            <a class="footer-wordmark" href="http://www.washington.edu">University of Washington</a>
+            <a href="http://www.washington.edu/boundless/"><h3 class="cip">Be boundless</h3></a>
+            <a href="http://www.washington.edu/boundless/"><h3 class="ischool">Be boundless</h3></a>
+            <p>© 2020 University of Washington | Seattle, WA</p>
         </div>
     </body>
 </html>
