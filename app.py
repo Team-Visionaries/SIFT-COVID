@@ -71,9 +71,11 @@ def tool(url):
             'google_query': googleLink(search_query),
             'duck_query': duckLink(search_query),
             'yahoo_query': yahooLink(search_query),
+            'bing_query': bingLink(search_query),
             'google_source': googleLink(source_brand + '+wikipedia'),
             'yahoo_source': yahooLink(source_brand + '+wikipedia'),
             'duck_source': duckLink(source_brand + '+wikipedia'),
+            'bing_source': bingLink(source_brand + '+wikipedia'),
             'num_citations': citations_len,
             'citations': citations
         }
@@ -114,6 +116,9 @@ def duckLink(query):
 
 def yahooLink(query):
     return 'https://www.search.yahoo.com/search?p=' + query
+
+def bingLink(query):
+    return 'https://www.bing.com/search?q=' + query
     
 if __name__ == '__main__':
     app.run()

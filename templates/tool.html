@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/mini.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/full.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/footer.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="icon" href="{{ url_for('static', filename= 'assets/img/find.png') }}">
 
@@ -56,82 +57,51 @@
                         <h1 id="article_name" class="large"> {{data.title}} </h1>
                         <h2 class="large"> Key Information </h2>
                         <div class="container">
-                            <!-- <div class="row">
-                                <div class="col"> -->
-                                    <div class="row">
-                                        <div class="col">
-                                            <h3> Link </h3>
-                                        </div>
-                                        <div class="col">
-                                        <a href={{data.url}} target="_blank"> Click here</a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <h3> Author </h3>
-                                        </div>
-                                        <div class="col">
-                                        {{data.authors}}
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                        <h3> Publisher </h3>
-                                        </div>
-                                        <div class="col">
-                                        <a href={{data.source_url}} target="_blank">{{data.source_name}}</a> 
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                        <h3> Date Published </h3>
-                                        </div>
-                                        <div class="col">
-                                            {{data.date}}
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                        <h3> Total Citations </h3>
-                                        </div>
-                                        <div class="col">
-                                            {{data.num_citations}}
-                                        </div>
-                                    </div>
-                                <!-- </div>
-                            </div> -->
-                        </div>
-                        <div class="img-center-key"></div>
-                        <h2 class="large"> Next Steps </h2>
-                        <div class="img-center-next"></div>
-                        <div class="container">
-                            <p>The most important part of fact checking as well as the heart of the <a href="https://isift.herokuapp.com/" target="_blank">SIFT method</a>
-                                lies exploring different sources! This includes investigating the source and finding different sources in the domain you want to learn about.
-                                Here are some search links to get you started. Click on the link to any search engine you like!</p>
-                                <div class="row">
-                                    <div class="col">
-                                        <h3>Investigate the Source</h3>
-                                    </div>
-                                    <div class="col">
-                                        <h3>Explore the topic</h3>
-                                    </div>
-                                </div>
                             <div class="row">
                                 <div class="col">
-                                    <a class="uw-btn" href={{data.google_source}} target="_blank">Google</a> <br>
-                                    <a class="uw-btn" href={{data.duck_source}} target="_blank">DuckDuckGo</a><br>
-                                    <a class="uw-btn" href={{data.yahoo_source}} target="_blank">Yahoo</a><br>
+                                    <h3> Link </h3>
                                 </div>
                                 <div class="col">
-                                    <a class="uw-btn" href={{data.google_query}} target="_blank">Google</a> <br>
-                                    <a class="uw-btn" href={{data.duck_query}} target="_blank">DuckDuckGo</a><br>
-                                    <a class="uw-btn" href={{data.yahoo_query}} target="_blank">Yahoo</a><br>
+                                <a href={{data.url}} target="_blank"> Click here</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h3> Author </h3>
+                                </div>
+                                <div class="col">
+                                {{data.authors}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                <h3> Publisher </h3>
+                                </div>
+                                <div class="col">
+                                <a href={{data.source_url}} target="_blank">{{data.source_name}}</a> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                <h3> Date Published </h3>
+                                </div>
+                                <div class="col">
+                                    {{data.date}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                <h3> Total Citations </h3>
+                                </div>
+                                <div class="col">
+                                    {{data.num_citations}}
                                 </div>
                             </div>
                         </div>
                         <h2 class="large"> Summary </h2>
                         <p><b>Summary: </b> {{data.summary}}</p>
                         <p><b>Keywords:</b> {{data.keywords}}</p>
+                        <div class="img-center-key"></div>
                         <h2 class="large"> Sifty Tips </h2>
                         <br> 
                         <div class="container">
@@ -174,14 +144,43 @@
                                 </ul>
                             {% endif%}
                         </div>
+                        <h2 class="large"> Next Steps </h2>
+                        <div class="img-center-next"></div>
+                        <div class="container">
+                            <p>The most important part of fact checking as well as the heart of the <a href="https://isift.herokuapp.com/" target="_blank">SIFT method</a>
+                                lies exploring different sources! This includes investigating the source and finding different sources in the domain you want to learn about.
+                                Here are some search links to get you started. Click on the link to any search engine you like!</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Investigate the Source</h3>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Explore the topic</h3>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="uw-btn fixed-sm" href={{data.google_source}} target="_blank">Google</a> <br>
+                                    <a class="uw-btn fixed-sm" href={{data.duck_source}} target="_blank">DuckDuckGo</a><br>
+                                    <a class="uw-btn fixed-sm" href={{data.yahoo_source}} target="_blank">Yahoo</a><br>
+                                    <a class="uw-btn fixed-sm" href={{data.bing_source}} target="_blank">Bing</a><br>
+                                </div>
+                                <div class="col">
+                                    <a class="uw-btn fixed-sm" href={{data.google_query}} target="_blank">Google</a> <br>
+                                    <a class="uw-btn fixed-sm" href={{data.duck_query}} target="_blank">DuckDuckGo</a><br>
+                                    <a class="uw-btn fixed-sm" href={{data.yahoo_query}} target="_blank">Yahoo</a><br>
+                                    <a class="uw-btn fixed-sm" href={{data.bing_query}} target="_blank">Bing</a><br>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="uw-footer" role="contentinfo">
             <a class="footer-wordmark" href="http://www.washington.edu">University of Washington</a>
-            <a href="http://www.washington.edu/boundless/"><h3 class="cip">Be boundless</h3></a>
-            <a href="http://www.washington.edu/boundless/"><h3 class="ischool">Be boundless</h3></a>
+            <a href="https://www.cip.uw.edu/"><h3 class="cip">Center for An Informed Public</h3></a>
+            <a href="https://ischool.uw.edu/"><h3 class="ischool">iSchool</h3></a>
             <p>© 2020 University of Washington | Seattle, WA</p>
         </div>
     </body>

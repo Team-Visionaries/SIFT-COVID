@@ -7239,7 +7239,9 @@ a.more:after {
 }
 
 .uw-body {
-	position: relative
+	position: relative;
+	width: 70%;
+	left: 15%
 }
 
 .uw-body.container {
@@ -7444,7 +7446,9 @@ img.attachment-post-thumbnail.wp-post-image.blogroll-img,
 
 @media only screen and (max-width:767px) {
 	.uw-body {
-		padding: 20px
+		padding: 20px;
+		width: 100%;
+		left: 0%;
 	}
 	.uw-body .uw-site-title {
 		color: #4b2e83;
@@ -10089,7 +10093,11 @@ button.uw-btn {
 	z-index: 1;
 	line-height: 24px;
 	font-size: 16px;
-	text-decoration: none !important
+	text-decoration: none !important;
+}
+
+a.uw-btn.fixed-sm {
+	width: 130px
 }
 
 a.uw-btn.btn-sm,
