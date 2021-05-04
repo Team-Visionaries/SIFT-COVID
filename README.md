@@ -7,6 +7,15 @@ Team Visionaries:
 
 In collaboration with the University of Washington [iSchool](https://ischool.uw.edu/) and [Center for an Informed Public](https://www.cip.uw.edu/)
 
+## Table of Contents
+- [Problem context](#problem-context)
+- [Our Solution](#our-solution)
+- [Technology used](#technology-used)
+- [Features Demo](#demo)
+- [Setup](#setup)
+- [Status](#status)
+
+
 ## Problem Context
 Our project deals with combating misinformation, particularly about COVID-19 and vaccines. This is important today, because false information about COVID can confuse people and cause them to do things that might endanger the health and well-being of others. One way to fight misinformation is to promote media literacy, which is people’s ability to recognize misinformation.
 
@@ -26,7 +35,31 @@ SIFT is a four-step strategy used to fact-check and cross-reference information.
 - T: **TRACE** claims, quotes, and media to its original context.
 
 We will do so with the help of two tools created by Team Visionaries
-- **SIFTY chatbot**: Chats with users about the article they see on Facebook and provides resources on how to fact-check it
-- **[Information Extraction Web Tool](https://team-visionaries.github.io/SIFT-COVID/)**: Summarizes key info and provides tips that will help expedite the fact checking process
+- **[SIFTY Chatbot](https://www.facebook.com/iSift-102773021888658)**: Chats with users about the article they see on Facebook and provides resources on how to fact-check it
+- **[Information Extraction Web Tool](https://isift.herokuapp.com/)**: Summarizes key info and provides tips that will help expedite the fact checking process
 
-**NOTE: iSIFT is NOT an info hub; our goal is to summarize info and promote media literacy**
+**NOTE: iSIFT is NOT an information hub; our goal is to summarize info and promote media literacy**
+
+## Demo
+Watch how to use this tool [here](https://youtu.be/kfD-5SUe68g)
+![](static/assets/img/ss.jpg)
+## Technologies
+- Python version: Python 3.9
+- Third-Party extensions
+    - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    - [Newspaper3k](https://newspaper.readthedocs.io/en/latest/)
+    - [Beautiful Soup](http://beautiful-soup-4.readthedocs.io/)
+    
+## Setup
+- Run locally:
+
+  Install all dependencies using pip:
+  `pip install -r requirements.txt`
+
+  Execute `flask run` in the directory. The application will be live at http://127.0.0.1:5000/
+- For development:
+
+  [TBD]
+
+## Status
+Development In Progress
