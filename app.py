@@ -57,10 +57,14 @@ def tool(url):
         else:
             citations_len = str(len(citations))
 
+        image = article.top_image
+        if len(image) <= 0: 
+            image = "https://images.pexels.com/photos/6335/man-coffee-cup-pen.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
         results = {
             'url': url,
             'title': article.title,
             'date': publish_date,
+            'image': image,
             'source_url': source_url,
             'source_name': source_brand,
             'source_descr': source.description,

@@ -4017,7 +4017,7 @@ address {
 	float: left;
 	width: 30px;
 	height: 30px;
-	background: url(assets/svg/uw-sprite.svg) no-repeat 0 0
+	background: url(../assets/svg/uw-sprite.svg) no-repeat 0 0
 }
 
 #uw-container #quicklinks ul#big-links li span.icon-maps {
@@ -4110,7 +4110,7 @@ address {
 }
 
 #uw-container #quicklinks ul#little-links li:nth-child(6):before {
-	background: url(assets/svg/uw-sprite.svg) no-repeat 0 -159px;
+	background: url(../assets/svg/uw-sprite.svg) no-repeat 0 -159px;
 	height: 20px;
 	width: 20px;
 	top: 5px;
@@ -4125,7 +4125,7 @@ address {
 }
 
 #uw-container #quicklinks ul#little-links li:nth-child(7):before {
-	background: url(assets/svg/uw-sprite.svg) no-repeat -37px -157px;
+	background: url(../assets/svg/uw-sprite.svg) no-repeat -37px -157px;
 	height: 20px;
 	width: 20px;
 	top: 5px;
@@ -7216,6 +7216,15 @@ small,
 	margin-bottom: 20px
 }
 
+.collapse.in {
+	visibility: visible;
+	display:block;
+  }
+
+img.top-image {
+	width: 90%;
+}
+
 .uw-body-copy .weight-900 {
 	font-weight: 900
 }
@@ -10217,7 +10226,7 @@ button.uw-btn:after {
 	right: -50px;
 	top: 50%;
 	margin-top: -28px;
-	background: url(assets/svg/uw-sprite.svg) no-repeat -36px -475px transparent
+	background: url(../assets/svg/uw-sprite.svg) no-repeat -36px -475px transparent
 }
 
 a.uw-btn:before,

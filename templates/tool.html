@@ -18,6 +18,7 @@
         <link rel="icon" href="{{ url_for('static', filename= 'assets/img/find.png') }}">
 
 		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js?ver=1.9.1'></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<script type='text/javascript' src='http://www.washington.edu/wp-includes/js/underscore.min.js?ver=1.6.0'></script>
 		<script type='text/javascript' src='http://www.washington.edu/wp-includes/js/backbone.min.js?ver=1.1.2'></script>
 		<script type='text/javascript' src='http://www.washington.edu/wp-content/themes/uw-2014/js/site.dev.js'></script>
@@ -55,7 +56,8 @@
                     <div class="container">
                         <div class="img-center-tool"></div>
                         <h1 id="article_name" class="large"> {{data.title}} </h1>
-                        <h2 class="large"> Key Information </h2>
+                        <img class="top-image" src="{{data.image}}" alt="">
+                        <h2 class="large"> Key Information </h2> <br>
                         <div class="container">
                             <div class="row">
                                 <div class="col">
@@ -98,9 +100,12 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 class="large"> Summary </h2>
-                        <p><b>Summary: </b> {{data.summary}}</p>
-                        <p><b>Keywords:</b> {{data.keywords}}</p>
+                        <br> 
+                        <button type="button" class="uw-btn" data-toggle="collapse" data-target="#summary"> <h2> Summary </h2></button>
+                        <div id="summary" class="collapse">
+                            <p><b>Summary: </b> {{data.summary}}</p>
+                            <p><b>Keywords:</b> {{data.keywords}}</p>
+                        </div>
                         <div class="img-center-key"></div>
                         <h2 class="large"> Sifty Tips </h2>
                         <br> 
@@ -133,15 +138,18 @@
                                     <a href="https://isift.herokuapp.com/" target="_blank">SIFT method</a>
                                 </p>
                             {% else %}
-                                <p> Here are the {{data.num_citations}} links that were referenced throughout the article. More links 
+                                <p> There are the {{data.num_citations}} links that were referenced throughout the article. More links 
                                     may mean that this source has done their homework and gets their facts from multiple different sources.
                                     But, you must analyze these sources for credibility as well!
                                 </p>
-                                <ul>
-                                    {% for each in data.citations %}
-                                        <li><a href={{each.href}}>{{each.text}}</a> </li>
-                                    {% endfor %}
-                                </ul>
+                                <button type="button" class="uw-btn" data-toggle="collapse" data-target="#citations">Citations List</button>
+                                <div id="citations" class="collapse">
+                                    <ul>
+                                        {% for each in data.citations %}
+                                            <li><a href={{each.href}}>{{each.text}}</a> </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             {% endif%}
                         </div>
                         <h2 class="large"> Next Steps </h2>
