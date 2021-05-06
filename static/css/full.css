@@ -71,7 +71,7 @@
   text-indent: -9999px;
   width: 330px;
   height: 24px;
-  background: url(../assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent;
+  background: url(../assets/svg/isift-sm.svg) no-repeat 0 -431px transparent;
 }
 
 .uw-thinstrip p {
@@ -228,17 +228,18 @@
   }
   .uw-thinstrip {
     padding: 0;
-    height: 45px;
+    height: 60px;
   }
   .uw-thinstrip .container {
     position: static;
   }
   .uw-thinstrip .uw-patch {
-    width: 73px;
-    height: 45px;
-    top: 0;
-    left: 0;
+    width: 90%;
+    height: 100%;
+    top: 10px;
+    left: 35%;
     background-size: 470px;
+    background: url('../assets/svg/isift.svg') no-repeat 0 0 transparent;
   }
   .uw-thinstrip .uw-wordmark {
     width: 155px;
@@ -369,11 +370,12 @@
     background-position: 0 -331px;
   }
   .uw-thinstrip .uw-patch {
-    width: 73px;
+    width: 200px;
     height: 45px;
     top: 0;
     left: 0;
     background-size: 470px;
+    background: url('../assets/svg/isift.svg') no-repeat;
   }
 }
 .assistive-text {

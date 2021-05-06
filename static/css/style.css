@@ -6045,7 +6045,7 @@ a.uw-custom-link:hover {
 	text-indent: -9999px;
 	width: 330px;
 	height: 24px;
-	background: url(assets/svg/uw-sprite.svg) no-repeat 0 -431px transparent
+	background: url(../assets/img/sift.png) no-repeat 0 -431px transparent
 }
 
 .uw-thinstrip div.align-right {
@@ -7879,7 +7879,8 @@ ul.uw-sidebar-menu>div span,
 ul.uw-mobile-menu>div span {
 	display: block;
 	font-size: 16px;
-	padding: 10px 10px 10px 20px
+	padding: 10px 10px 10px 20px;
+	font-weight: bold;
 }
 
 ul.uw-sidebar-menu li.pagenav a.homelink,
@@ -8345,7 +8346,7 @@ body.home .uw-sidebar-menu {
 		height: 40px;
 		text-transform: uppercase;
 		color: #4b2e83;
-		background: url(assets/svg/uw-sprite.svg) no-repeat -475px 20px transparent;
+		background: url(../assets/svg/uw-sprite.svg) no-repeat -475px 20px transparent;
 		background-size: 1200px;
 		border: none;
 		padding: 0 0 20px 0
@@ -8412,7 +8413,7 @@ body.home .uw-sidebar-menu {
 	}
 	#mobile-relative.frontpage ul.uw-mobile-menu>div>ul .menu-item-has-children>a {
 		position: relative;
-		padding: 10px 10px 10px 20px
+		padding: 10px 10px 10px 40px
 	}
 	#mobile-relative.frontpage ul.uw-mobile-menu>div>ul .menu-item-has-children>a:focus {
 		color: black
@@ -8434,7 +8435,8 @@ body.home .uw-sidebar-menu {
 	}
 	#mobile-relative.frontpage.bighero button.uw-mobile-menu-toggle {
 		right: 0px;
-		top: 12px
+		top: 12px;
+		left: 45%;
 	}
 	#mobile-relative.frontpage.bighero ul.uw-mobile-menu {
 		margin: 0

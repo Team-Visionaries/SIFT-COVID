@@ -37,26 +37,44 @@
                     <div class='align-right'>
                         <nav class="uw-thin-strip-nav">
                             <ul class="uw-thin-links">
-                                <li class="dawgdrops-item">
-                                    <a href="{{ url_for('about')}}" title="About">About</a>
+                                <li>
+                                    <a class="selected" href="{{ url_for('about')}}" title="About">About</a>
                                 </li>
-                                <li class="dawgdrops-item">
-                                    <a class="selected" href="{{ url_for('search')}}" title="Search">Tool</a>
+                                <li>
+                                    <a href="{{ url_for('search')}}" title="Search">Tool</a>
                                 </li>
                             </ul>
                          </nav>
                         <nav aria-label="search and quick links" id="search-quicklinks" role="navigation">
                     </div>
                     <div class="container">
-                        <a class="uw-patch" href="http://uw.edu" tabindex="-1" title=
-                        "University of Washington Home">Home</a> 
+                        <a class="uw-patch" href="https://isift.herokuapp.com/" tabindex="-1" title=
+                        "University of Washington Home">iSIFT</a> 
                     </div>
                 </header>
+                <nav aria-label="mobile menu" class="frontpage bighero active_nav" id="mobile-relative">
+                    <div id="spacer"></div>
+                    <button class="uw-mobile-menu-toggle">Menu</button>
+                    <ul class="uw-mobile-menu first-level" style="display: none;">
+                       <div class="menu-dropdowns-container">
+                          <ul class="" id="menu-dropdowns-1">
+                              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-12877" id="menu-item-12877">
+                                <a href="{{ url_for('about')}}" aria-expanded="false">About</a> </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-12877" id="menu-item-12877">
+                                <a href="{{ url_for('search')}}" aria-expanded="false">Tool</a> </li>
+                            </ul>
+                        </div>
+                    </ul>
+                </nav>
                 <div class="uw-body">
                     <div class="container">
                         <div class="img-center-tool"></div>
                         <h1 id="article_name" class="large"> {{data.title}} </h1>
                         <img class="top-image" src="{{data.image}}" alt="">
+                        <br>
+                        <h3>Note: iSIFT Does not aim to to tell you how right or wrong a news source or information is. 
+                            We only aim to promote social media literacy and fact checking skills
+                        </h3> <br>
                         <h2 class="large"> Key Information </h2> <br>
                         <div class="container">
                             <div class="row">
@@ -158,22 +176,16 @@
                             <p>The most important part of fact checking as well as the heart of the <a href="https://isift.herokuapp.com/" target="_blank">SIFT method</a>
                                 lies exploring different sources! This includes investigating the source and finding different sources in the domain you want to learn about.
                                 Here are some search links to get you started. Click on the link to any search engine you like!</p>
-                                <div class="row">
-                                    <div class="col">
-                                        <h3>Investigate the Source</h3>
-                                    </div>
-                                    <div class="col">
-                                        <h3>Explore the topic</h3>
-                                    </div>
-                                </div>
                             <div class="row">
                                 <div class="col">
+                                    <h3>Investigate the Source</h3>
                                     <a class="uw-btn fixed-sm" href={{data.google_source}} target="_blank">Google</a> <br>
                                     <a class="uw-btn fixed-sm" href={{data.duck_source}} target="_blank">DuckDuckGo</a><br>
                                     <a class="uw-btn fixed-sm" href={{data.yahoo_source}} target="_blank">Yahoo</a><br>
                                     <a class="uw-btn fixed-sm" href={{data.bing_source}} target="_blank">Bing</a><br>
                                 </div>
                                 <div class="col">
+                                    <h3>Explore the topic</h3>
                                     <a class="uw-btn fixed-sm" href={{data.google_query}} target="_blank">Google</a> <br>
                                     <a class="uw-btn fixed-sm" href={{data.duck_query}} target="_blank">DuckDuckGo</a><br>
                                     <a class="uw-btn fixed-sm" href={{data.yahoo_query}} target="_blank">Yahoo</a><br>

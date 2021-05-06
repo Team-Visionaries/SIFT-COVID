@@ -36,10 +36,10 @@
                     <div class='align-right'>
                         <nav class="uw-thin-strip-nav">
                             <ul class="uw-thin-links">
-                                <li class="dawgdrops-item">
+                                <li>
                                     <a class="selected" href="{{ url_for('about')}}" title="About">About</a>
                                 </li>
-                                <li class="dawgdrops-item">
+                                <li>
                                     <a href="{{ url_for('search')}}" title="Search">Tool</a>
                                 </li>
                             </ul>
@@ -47,10 +47,24 @@
                         <nav aria-label="search and quick links" id="search-quicklinks" role="navigation">
                     </div>
                     <div class="container">
-                        <a class="uw-patch" href="http://uw.edu" tabindex="-1" title=
-                        "University of Washington Home">Home</a> 
+                        <a class="uw-patch" href="https://isift.herokuapp.com/" tabindex="-1" title=
+                        "University of Washington Home">iSIFT</a> 
                     </div>
                 </header>
+                <nav aria-label="mobile menu" class="frontpage bighero active_nav" id="mobile-relative">
+                    <div id="spacer"></div>
+                    <button class="uw-mobile-menu-toggle">Menu</button>
+                    <ul class="uw-mobile-menu first-level" style="display: none;">
+                       <div class="menu-dropdowns-container">
+                          <ul class="" id="menu-dropdowns-1">
+                              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-12877" id="menu-item-12877">
+                                <a href="{{ url_for('about')}}" aria-expanded="false">About</a> </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-12877" id="menu-item-12877">
+                                <a href="{{ url_for('search')}}" aria-expanded="false">Tool</a> </li>
+                            </ul>
+                        </div>
+                    </ul>
+                </nav>
                 <div class="uw-body">
                     <div class="container">
                         <div class="img-center-home"></div>
@@ -110,7 +124,7 @@
                         <p>
                             Interested in learning more? Do you want to continue building your media literacy skills? Check out some of the resources below!
                             <a class="uw-btn btn-sm" href="https://www.cip.uw.edu/"> Center for an Informed Public</a> <br>
-                            <a class="uw-btn btn-sm" href=""> Some Resource</a>
+                            <a class="uw-btn btn-sm" href="https://www.cdc.gov/"> Centers for Disease Control and Prevention</a>
                         </p>
                     </div>
                 </div>
