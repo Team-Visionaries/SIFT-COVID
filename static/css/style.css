@@ -7187,8 +7187,13 @@ hr {
 }
 
 iframe {
-	margin: 40px 0 20px;
-	max-width: 100%
+	margin: 0 auto;
+	max-width: 100%;
+	width: 80%;
+	height: 500px;
+	display: block;
+
+
 }
 
 iframe[src*="youtu.be"],
