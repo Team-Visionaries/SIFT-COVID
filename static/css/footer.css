@@ -24,6 +24,7 @@
   text-indent: -9999px;
   overflow: hidden;
   margin-top: 50px;
+  padding-bottom: 10px;
 }
 .uw-footer .footer-wordmark:focus,
 .uw-footer .footer-wordmark:hover {
@@ -35,7 +36,7 @@
   background: url(../assets/img/cip.jfif) no-repeat center top transparent;
   display: block;
   text-indent: -99999px;
-  margin: 10px 0 60px;
+  margin: 40px 0 40px;
   opacity: 1;
   -o-transition: opacity 0.25s;
   -webkit-transition: opacity 0.25s;
@@ -182,5 +183,9 @@
   }
   .uw-footer h4:after {
     display: none;
+  }
+
+  .uw-footer .ischool {
+    line-height: 55px;
   }
 }
