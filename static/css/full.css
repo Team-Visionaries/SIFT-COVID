@@ -85,7 +85,7 @@
 }
 
 .uw-thinstrip ul.uw-thin-links {
-  margin: 0;
+  margin: 0 70px 0 0;
   position: relative;
   z-index: 1;
   font-weight: 700;

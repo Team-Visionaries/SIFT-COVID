@@ -83,6 +83,12 @@ h1 {
 	margin: .67em 0
 }
 
+h2.tagline {
+	font-size: 3em;
+	font-style: italic;
+	text-align: center;
+}
+
 mark {
 	background: #ff0;
 	color: #000
@@ -10087,12 +10093,13 @@ textarea#jp-carousel-comment-form-comment-field:focus::-webkit-input-placeholder
 	display: none
 }
 
-button.uw-btn {
+button.uw-btn, input.uw-btn{
 	border: none
 }
 
 a.uw-btn,
-button.uw-btn {
+button.uw-btn,
+input.uw-btn {
 	padding: 11px 20px;
 	text-transform: uppercase;
 	background-color: #e8e3d3;

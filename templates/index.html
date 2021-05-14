@@ -109,37 +109,24 @@
                         </div>
                     </div>
                     
-                    <div class="container">
-                        <h2 class="large"> How do we extract data from the articles?</h2>
-                        <p>
-                            The URL provided goes through a <a href="https://en.wikipedia.org/wiki/Python_(programming_language"> Python </a> script
-                            that scrapes information from the article link. This is done through third party libraries like 
-                            <a href="https://newspaper.readthedocs.io/en/latest/">Newspaper</a> and <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a>
-                            This is means that most of the information extracted is simply finding the right elements that already exist in the link you provided like the date published,
-                            authors, titles etc. However, certain elements may not be entirely accurate like summary and keywords extracted from the article depends entirely on 
-                            third party natural language processing power. 
-                        </p>
-                    </div>
+                   
                     <br>
                     <div class="container">
-                        <h2 class="large"> About Us </h2>
-                        <p><i>Fact checking with ease</i></p>
                         <br>
-                        <h2>Project Information</h2>
+                        <h2 class="large">Project Information</h2>
                         <p>
-                            Our project deals with combating misinformation, particularly about COVID-19 and vaccines. This is important today, because false information about COVID can confuse people and cause them to do things that might endanger the health and well-being of others. One way to fight misinformation is to promote media literacy, which is people’s ability to recognize misinformation.
+                            Digital misinformation is a growing problem which threatens to undermine U.S. democracy. Working with the University of Washington's Center for an Informed Public (CIP), this project applies the SIFT fact-checking strategy to a Facebook-based intervention to mitigate the spread of misinformation online. A Facebook Messenger chatbot prompts users to fact-check articles and provides an information extraction tool to expedite the fact checking process. The project, iSIFT, reduces the amount of time needed to fact-check and trains users in information verification best practices to create a community of information skeptics and critical thinkers.
                         </p>
                         <br>
 
 
-                        <h2> Sponsors </h2>
+                        <h2 class="large"> Sponsors </h2>
                         <p>
-                            This project was sponsored by the <a href="https://www.cip.uw.edu/">Center for an Informed Public.</a> 
-                            Emily porter was the main point of contact for this sponsor project. 
+                            This project is sponsored by the University of Washington’s <a href="https://www.cip.uw.edu/"> Center for an Informed Public.</a> Emily Porter (PhD Student) is the main point of contact for this sponsor project. 
                         </p>
                         <br>
 
-                        <h2>Key Features</h2>
+                        <h2 class="large">Key Features</h2>
                         <p>The project consists of two components: 1. Facebook Messenger Chatbot 2. External website fact-checking tool</p>
                         <br> 
                         <h3>01</h3>
@@ -148,7 +135,10 @@
                                 <img src="{{ url_for('static', filename= 'assets/img/chatbot.png') }}" style="width: 200px">
                             </div>
                             <div class="col">
-                                <p>The chatbot chats with users about the article they see on Facebook and provides resources on how to fact-check it.  It allows users to send article links for it to be processed by the external website tool</p>
+                                <p>
+                                    The chatbot chats with users about the article they see on Facebook and provides resources on how to fact-check it.  It allows users to send article links for it to be processed by the external website tool
+
+                                </p>
                             </div>
                         </div>
                         <h3>02</h3>
@@ -157,66 +147,85 @@
                                 <img src="{{ url_for('static', filename= 'assets/img/website.png') }}" style="width: 200px">
                             </div>
                             <div class="col">
-                                <p>The external website tool extracts important information from the article such as date published, publisher source, summary and citations. It compiles the important information into an easy to read manner. </p>
+                                <p>
+                                    The external website tool extracts important information from the article such as date published, publisher source, summary and citations. It compiles the important information into an easy-to-read manner. 
+                                </p>
                             </div>
                         </div>
                         <br>
 
-                        <h2> Presentation Video </h2>
+                        <div class="container">
+                            <h2 class="large"> How do we extract data from the articles?</h2>
+                            <p>
+                                The URL provided goes through a <a href="https://en.wikipedia.org/wiki/Python_(programming_language"> Python </a> script
+                                that scrapes information from the article link. This is done through third party libraries like 
+                                <a href="https://newspaper.readthedocs.io/en/latest/">Newspaper</a> and <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a>
+                                This is means that most of the information extracted is simply finding the right elements that already exist in the link you provided like the date published,
+                                authors, titles etc. However, certain elements may not be entirely accurate like summary and keywords extracted from the article depends entirely on 
+                                third party natural language processing power. 
+                            </p>
+                        </div>
                         <br>
-                        <iframe src="https://www.youtube.com/embed/xgfmB0jgi_A" 
-                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen></iframe>
-                        <br> <br>
-                       
-                        
-                        <h2> Team Members</h2>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <p class="font-weight-bold">Judith Wong</p>
-                                    <figure class="figure">
-                                        <img src="{{ url_for('static', filename= 'assets/img/judi.png') }}"
-                                        class="figure-img img-fluid z-depth-1" alt="..." style="width: 200px">
-                                        <figcaption class="figure-caption">PM / UX Researcher</figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-3">
-                                    <p class="font-weight-bold">Jazymnn Combes-Troyer</p>
-                                    <figure class="figure">
-                                        <img src="{{ url_for('static', filename= 'assets/img/jaz.png') }}"
-                                        class="figure-img img-fluid z-depth-1" alt="..." style="width: 200px">
-                                        <figcaption class="figure-caption">UX/UI Designer & Researcher                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-3">
-                                    <p class="font-weight-bold">Saasha Mor</p>
-                                    <figure class="figure">
-                                        <img src="{{ url_for('static', filename= 'assets/img/saasha.png') }}"
-                                        class="figure-img img-fluid z-depth-1" alt="..." style="width: 200px">
-                                        <figcaption class="figure-caption">Developer</figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-md-3">
-                                    <p class="font-weight-bold">Joseph Altamira</p>
-                                    <figure class="figure">
-                                        <img src="{{ url_for('static', filename= 'assets/img/joseph.png') }}"
-                                        class="figure-img img-fluid z-depth-1" alt="..." style="width: 200px">
-                                        <figcaption class="figure-caption">Developer</figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-
+                        <div class="container">
+                            <h2 class="large"> Presentation Video </h2>
                             <br>
-                            <h2> Project Status</h2>
-                            <p>The project is currenty in the middle of its finishing touches and will be handed off to the CIP for a future capstone team to develop. </p>
-                    </div>
-                    <div class="container">
-                        <h2 class="large"> Resources</h2>
-                        <p>
-                            Interested in learning more? Do you want to continue building your media literacy skills? Check out some of the resources below!
-                            <a class="uw-btn btn-sm" href="https://www.cip.uw.edu/"> Center for an Informed Public</a> <br>
-                            <a class="uw-btn btn-sm" href="https://www.cdc.gov/"> Centers for Disease Control and Prevention</a>
-                        </p>
+                            <iframe src="https://www.youtube.com/embed/xgfmB0jgi_A" 
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                            <br> <br>
+                        
+                            
+                            <h2 class="large"> Team Members</h2>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <p class="font-weight-bold">Judith Wong</p>
+                                        <figure class="figure">
+                                            <img src="{{ url_for('static', filename= 'assets/img/judi.png') }}"
+                                            class="figure-img img-fluid z-depth-1" alt="..." style="width: 200px">
+                                            <figcaption class="figure-caption">PM / UX Researcher</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p class="font-weight-bold">Jazymnn Combes-Troyer</p>
+                                        <figure class="figure">
+                                            <img src="{{ url_for('static', filename= 'assets/img/jaz.png') }}"
+                                            class="figure-img img-fluid z-depth-1" alt="..." style="width: 200px">
+                                            <figcaption class="figure-caption">UX/UI Designer & Researcher                                        </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p class="font-weight-bold">Saasha Mor</p>
+                                        <figure class="figure">
+                                            <img src="{{ url_for('static', filename= 'assets/img/saasha.png') }}"
+                                            class="figure-img img-fluid z-depth-1" alt="..." style="width: 200px">
+                                            <figcaption class="figure-caption">Developer</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p class="font-weight-bold">Joseph Altamira</p>
+                                        <figure class="figure">
+                                            <img src="{{ url_for('static', filename= 'assets/img/joseph.png') }}"
+                                            class="figure-img img-fluid z-depth-1" alt="..." style="width: 200px">
+                                            <figcaption class="figure-caption">Developer</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <h2 class="large"> Project Status</h2>
+                                <p>
+                                    As of May 21st, 2021 the project has been transferred to the CIP for a future capstone team to further develop. 
+    
+                                </p>
+                            </div>
+                            <div class="container">
+                                <h2 class="large"> Resources</h2>
+                                <p>
+                                    Interested in learning more? Do you want to continue building your media literacy skills? Check out some of the resources below!
+                                    <a class="uw-btn btn-sm" href="https://www.cip.uw.edu/"> Center for an Informed Public</a> <br>
+                                    <a class="uw-btn btn-sm" href="https://www.cdc.gov/"> Centers for Disease Control and Prevention</a>
+                                </p>
+                            </div>
                     </div>
                 </div>
             </div>
