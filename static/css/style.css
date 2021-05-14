@@ -976,6 +976,26 @@ pre code {
 
  .streamline .row {
 	 padding-top: 15px;
+	 background-color: #4b2e83;
+	 color: white;
+ }
+
+ .row {
+	 padding-top: 20px;
+ }
+
+ h2.large.emphasis {
+	 color: white;
+	 font-size: 3em;
+	 padding-bottom: 30px;
+	 padding-left: 30px;
+ }
+
+ h3.highlight {
+	 background-color: #4b2e83;
+	 color: white;
+	 width: fit-content;
+	 padding: 10px;
  }
 
 .container:before,
