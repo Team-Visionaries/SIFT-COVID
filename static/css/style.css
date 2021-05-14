@@ -89,6 +89,7 @@ h2.tagline {
 	text-align: center;
 }
 
+
 mark {
 	background: #ff0;
 	color: #000
@@ -100,7 +101,14 @@ small {
 
 .large {
 	padding-top: 30px;
-	font-size: 200%
+	font-size: 200%;
+}
+
+.goldbar {
+	width: 200px;
+	height: 10px;
+	background: url('../assets/img/gold_bar.png') no-repeat;
+	margin-bottom: 20px;
 }
 
 sub,
