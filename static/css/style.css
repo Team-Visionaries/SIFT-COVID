@@ -6063,7 +6063,7 @@ a.uw-custom-link:hover {
 
 .uw-thinstrip .uw-patch:focus,
 .uw-thinstrip .uw-patch:hover {
-	background: url(assets/svg/uw-sprite-focus.svg) no-repeat 0 0 transparent
+	opacity: 80%;
 }
 
 .uw-thinstrip .uw-patch:before {
