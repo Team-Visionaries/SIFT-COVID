@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>iSIFT</title>
+        <title>iSIFT: Fact checking made easy</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/full.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/footer.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="icon" href="{{ url_for('static', filename= 'assets/img/find.png') }}">
+        <link rel="icon" href="{{ url_for('static', filename= 'assets/img/siftlogo.png') }}">
 
 		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js?ver=1.9.1'></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -161,9 +161,11 @@
                                     <a href="https://isift.herokuapp.com/" target="_blank">SIFT method</a>
                                 </p>
                             {% else %}
-                                <p> There are the {{data.num_citations}} links that were referenced throughout the article. More links 
-                                    may mean that this source has done their homework and gets their facts from multiple different sources.
-                                    But, you must analyze these sources for credibility as well!
+                                <p> There are the {{data.num_citations}} links that were referenced throughout the article. They have been provided
+                                    with the text they appeared with in the article itself for context. We suggest you read the article as well to 
+                                    discern their main sources of information and its' credibility. 
+                                    More links may mean that this source has done their homework and gets their facts from multiple different sources.
+                                    But, you must analyze these sources for credibility as well! Click the button below to see the full list.
                                 </p>
                                 <button type="button" class="uw-btn" data-toggle="collapse" data-target="#citations">Citations List</button>
                                 <div id="citations" class="collapse">
