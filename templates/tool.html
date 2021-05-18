@@ -19,9 +19,9 @@
 
 		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js?ver=1.9.1'></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<script type='text/javascript' src='http://www.washington.edu/wp-includes/js/underscore.min.js?ver=1.6.0'></script>
-		<script type='text/javascript' src='http://www.washington.edu/wp-includes/js/backbone.min.js?ver=1.1.2'></script>
-		<script type='text/javascript' src='http://www.washington.edu/wp-content/themes/uw-2014/js/site.dev.js'></script>
+		<script type='text/javascript' src='https://www.washington.edu/wp-includes/js/underscore.min.js?ver=1.6.0'></script>
+		<script type='text/javascript' src='https://www.washington.edu/wp-includes/js/backbone.min.js?ver=1.1.2'></script>
+		<script type='text/javascript' src='https://www.washington.edu/wp-content/themes/uw-2014/js/site.dev.js'></script>
 
         <!--[if lt IE 9]>
             <script src="js/html5shiv.js" type="text/javascript"></script>
@@ -71,7 +71,11 @@
                         <div class="img-center-tool"></div>
                         <h1 id="article_name" class="large"> {{data.title}} </h1>
                         <br>
-                        <img class="top-image" src="{{data.image}}" alt="">
+                        {% if data.image == None or data.image == '' %}
+                            <img class="top-image" src="{{url_for('static', filename='assets/img/default-cover.jpg')}}" alt="open magazine">
+                        {% else %}
+                            <img class="top-image" src="{{data.image}}" alt="">
+                        {% endif %}
                         <br>
                         <h3>Note: iSIFT Does not aim to to tell you how right or wrong a news source or information is. 
                             We only aim to promote social media literacy and fact checking skills

@@ -14,7 +14,7 @@ def tool(url):
             flash('Please enter a URL!')
             return redirect('/search')
     else:
-        errorMsg = "Could not find. Please open the article to search for this value"
+        error_msg = "Could not find. Please open the article to search for this value"
         try:
             # Initiate article parsing
             article = Article(url)
@@ -25,7 +25,11 @@ def tool(url):
             flash('There was an error parsing the article. Please try another article!')
             return redirect('/search')
         
-        source_url = 'https://' + urlparse(url).netloc
+        if url.startswith('https'):
+            prefix = 'https://'
+        else:
+            prefix ='http://'
+        source_url = prefix + urlparse(url).netloc
 
         # Keywords are used to generate related search links
         # If keywords aren't available then the article title is used
@@ -39,17 +43,17 @@ def tool(url):
             source = newspaper.build(source_url, memoize_articles=False)
             source_brand = source.brand.upper()
         except Exception:
-            source_brand = errorMsg
+            source_brand = error_msg
 
         # Extracting date the article was published
         try:
             publish_date = article.publish_date.strftime("%d %B, %Y")
             diff = str((datetime.now() - article.publish_date).days)
         except Exception:
-            publish_date = errorMsg
+            publish_date = error_msg
             diff = "unknown"
 
-        # Extracting citations citations
+        # Extracting citations 
         citations = getCitations(article)
         if type(citations) == str:
             citations_len = str(0)
@@ -58,8 +62,13 @@ def tool(url):
             citations_len = str(len(citations))
 
         image = article.top_image
-        if len(image) <= 0: 
-            image = "https://images.pexels.com/photos/6335/man-coffee-cup-pen.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+
+        # Extracting author(s)
+        if len(article.authors) == 0:
+            authors = error_msg
+        else :
+            authors = ', '.join(map(str, article.authors))
+
         results = {
             'url': url,
             'title': article.title,
@@ -70,23 +79,22 @@ def tool(url):
             'source_descr': source.description,
             'keywords': ', '.join(map(str, article.keywords)),
             'summary': article.summary,
-            'authors': ', '.join(map(str, article.authors)),
+            'authors': authors,
             'date_diff': diff,
-            'google_query': googleLink(search_query),
-            'duck_query': duckLink(search_query),
-            'yahoo_query': yahooLink(search_query),
-            'bing_query': bingLink(search_query),
-            'google_source': googleLink(source_brand + '+wikipedia'),
-            'yahoo_source': yahooLink(source_brand + '+wikipedia'),
-            'duck_source': duckLink(source_brand + '+wikipedia'),
-            'bing_source': bingLink(source_brand + '+wikipedia'),
+            'google_query': f'https://www.google.com/search?q={search_query}',
+            'duck_query': f'https://www.duckduckgo.com?q={search_query}',
+            'yahoo_query': f'https://www.search.yahoo.com/search?p={search_query}',
+            'bing_query': f'https://www.bing.com/search?q={search_query}',
+            'google_source': f'https://www.google.com/search?q={source_brand}+wikipedia',
+            'yahoo_source': f'https://www.search.yahoo.com/search?p={source_brand}+wikipedia',
+            'duck_source': f'https://www.duckduckgo.com?q={source_brand}+wikipedia',
+            'bing_source': f'https://www.bing.com/search?q={source_brand}+wikipedia',
             'num_citations': citations_len,
             'citations': citations
         }
         return render_template('tool.html', data=results)
 @app.route('/search', methods=['GET', 'POST']) 
 def search():
-    app.secret_key = 'super secret key'
     search = SearchBar(request.form)
     if request.args.get('url') != None:
         return tool(request.args.get('url'))
@@ -100,8 +108,8 @@ def about():
 
 def getCitations(article):
     try:
-        htmlCode = article.html
-        soup = BeautifulSoup(htmlCode, "html.parser")
+        html_code = article.html
+        soup = BeautifulSoup(html_code, "html.parser")
         a_elems = soup.body.find_all("a")
         links = []
         for elem in a_elems:
@@ -111,18 +119,6 @@ def getCitations(article):
         return links
     except Exception:
         return "Could not find citations"
-
-def googleLink(query):
-    return 'https://www.google.com/search?q=' + query
-
-def duckLink(query):
-    return 'https://www.duckduckgo.com?q=' + query
-
-def yahooLink(query):
-    return 'https://www.search.yahoo.com/search?p=' + query
-
-def bingLink(query):
-    return 'https://www.bing.com/search?q=' + query
     
 if __name__ == '__main__':
     app.run()
